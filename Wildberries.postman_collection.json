@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "6de80259-ae52-44e7-9c96-f12f29829230",
+		"name": "Wildberries",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cписок складов поставщика",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "api token here",
+						"description": "токен для работы с API",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://suppliers-api.wildberries.ru/api/v2/warehouses",
+					"protocol": "https",
+					"host": [
+						"suppliers-api",
+						"wildberries",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v2",
+						"warehouses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cписок карточек поставщика с фильтром и сортировкой",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "api token here",
+						"description": "токен для работы с API",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"jsonrpc\": \"2.0\",\r\n\"params\": {}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://suppliers-api.wildberries.ru/card/list",
+					"protocol": "https",
+					"host": [
+						"suppliers-api",
+						"wildberries",
+						"ru"
+					],
+					"path": [
+						"card",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Обновить карточку",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "api token here",
+						"description": "токен для работы с API",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"jsonrpc\": \"2.0\",\r\n  \"params\": {\r\n    \"card\": {\r\n                \"id\": \"40f50edb-67ad-5c15-91d8-0c33dc88dc3d\",\r\n                \"imtId\": 47434348,\r\n                \"supplierId\": \"401a8577-afb0-4a59-a0c1-0be8f44430a9\",\r\n                \"object\": \"Матрасы\",\r\n                \"parent\": \"Мебель\",\r\n                \"countryProduction\": \"Россия\",\r\n                \"addin\": [\r\n                    {\r\n                        \"type\": \"Бренд\",\r\n                        \"params\": [\r\n                            {\r\n                                \"value\": \"НЕГА\"\r\n                            }\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"type\": \"Наименование\",\r\n                        \"params\": [\r\n                            {\r\n                                \"value\": \"Матрас для кровати, дивана, ортопедический, беспружинный, матрас топпер, тонкий, 140 на 200, чехол\"\r\n                            }\r\n                        ]\r\n                    },\r\n\t\t\t\t\t{\r\n                        \"type\": \"Ширина упаковки (мм)\",\r\n                        \"params\": [\r\n                            {\r\n                                \"count\": 800,\r\n                                \"units\": \"мм\"\r\n                            }\r\n                        ]\r\n                    },\r\n\t\t\t\t\t {\r\n                        \"type\": \"Высота упаковки (мм)\",\r\n                        \"params\": [\r\n                            {\r\n                                \"count\": 400,\r\n                                \"units\": \"мм\"\r\n                            }\r\n                        ]\r\n                    },\r\n\t\t\t\t\t{\r\n                        \"type\": \"Вес с упаковкой (кг)\",\r\n                        \"params\": [\r\n                            {\r\n                                \"count\": 3,\r\n                                \"units\": \"кг\"\r\n                            }\r\n                        ]\r\n                    },\r\n\t\t\t\t\t {\r\n                        \"type\": \"Глубина упаковки (мм)\",\r\n                        \"params\": [\r\n                            {\r\n                                \"count\": 400,\r\n                                \"units\": \"мм\"\r\n                            }\r\n                        ]\r\n                    },\r\n\t\t\t\t\t{\r\n                        \"type\": \"Модель матраса\",\r\n                        \"params\": [\r\n                            {\r\n                                \"value\": \"Ортопедический и анатомический эффект\"\r\n                            },\r\n                            {\r\n                                \"value\": \"наматрасник-топпер\"\r\n                            },\r\n                            {\r\n                                \"value\": \"беспружинный матрас для дивана Top Direct\"\r\n                            }\r\n                        ]\r\n                    },\r\n\t\t\t\t\t {\r\n                        \"type\": \"Комплектация\",\r\n                        \"params\": [\r\n                            {\r\n                                \"value\": \"Матрас на диван - 1 шт\"\r\n                            }\r\n                        ]\r\n                    }\r\n\t\t\t\t\t\r\n                ],\r\n\t\t\t\t\"nomenclatures\": [\r\n                    {\r\n                        \"id\": \"bca458d6-9cc0-4eaf-a84e-3cfaad3df90b\",\r\n                        \"nmId\": 62621406,\r\n                        \"vendorCode\": \"СБ1420ТД\"\r\n                    }\r\n                ]\r\n            },\r\n    \"supplierID\": \"401a8577-afb0-4a59-a0c1-0be8f44430a9\"\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "https://suppliers-api.wildberries.ru/card/update",
+					"protocol": "https",
+					"host": [
+						"suppliers-api",
+						"wildberries",
+						"ru"
+					],
+					"path": [
+						"card",
+						"update"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
